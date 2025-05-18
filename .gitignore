@@ -1,4 +1,4 @@
-.venv       # Ignores the virtual environment folder (Python)
-data/       # Ignores the entire 'data' directory
-*.csv       # Ignores all CSV files
-*.ipynb_checkpoints  # Ignores Jupyter notebook checkpoint files
+.venv       
+data/      
+*.csv       
+*.ipynb_checkpoints 
