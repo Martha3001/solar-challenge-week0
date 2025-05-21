@@ -41,28 +41,6 @@ class SolarAnalyzer:
         """
         return df[columns].corr()
     
-    def boxplots_by_country(df, columns = ['GHI', 'DNI', 'DHI']):
-        """
-        Create side-by-side boxplots for given columns, grouped by a categorical column (e.g., country).
-        
-        Parameters:
-            df (pd.DataFrame): Input DataFrame with at least 'Country' and the specified columns.
-            columns (list): List of column names to plot as boxplots.
-        
-        Returns:
-            matplotlib.figure.Figure: The figure containing the subplots.
-        """
-        fig, axs = plt.subplots(1, len(columns), figsize=(6 * len(columns), 6))
-
-        # Handle single axis case (if len(columns) == 1)
-        if len(columns) == 1:
-            axs = [axs]
-
-        for i, col in enumerate(columns):
-            sns.boxplot(data=df, x='Country', y=col, hue='Country', ax=axs[i], palette='Set2')
-            axs[i].set_title(f'{col} by Country')
-            axs[i].set_ylabel(f'{col} (W/m²)')
-            axs[i].set_xlabel('')
-
-        plt.tight_layout()
-        return fig
+    def calculate_summary_stats(df, columns = ['GHI', 'DNI', 'DHI']):
+        """Helper method to compute summary statistics"""
+        return df.groupby('Country')[columns].agg(['mean', 'median', 'std'])
