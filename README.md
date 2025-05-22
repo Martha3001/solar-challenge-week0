@@ -27,9 +27,7 @@ pip install -r requirements.txt
 ```
 
 ### **3. Run Jupyter Notebooks**  
-```bash
-jupyter notebook
-```
+
 - Open and execute:  
   - `notebooks/benin_eda.ipynb`  
   - `notebooks/sierra_leone_eda.ipynb`  
@@ -52,23 +50,6 @@ solar-challenge-week0/
 ├── README.md                 # This file  
 └── requirements.txt          # Python dependencies  
 ```
-
----
-
-## **📊 Key Findings**  
-✔ **Highest Solar Potential:** Benin (Median GHI = X kWh/m²/day).  
-✔ **Strongest Correlation:** Negative relationship between humidity (RH) and GHI.  
-✔ **Statistical Significance:** ANOVA confirmed differences in solar potential (p < 0.05).  
-
----
-
-## **🛠 Development Workflow**  
-1. **Branching:**  
-   ```bash
-   git checkout -b eda-benin   # For Benin analysis
-   ```
-2. **Commits:** Use semantic messages (e.g., `feat: add outlier detection`).  
-3. **Pull Requests:** Merge branches into `main` after review.  
 
 
 
